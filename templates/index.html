@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Knowledge Base Assistant</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>AI Knowledge Base Assistant</h1>
+
+    <!-- PDF Upload Section -->
+    <div class="upload-section">
+        <h3>Upload Document (PDF)</h3>
+        <div class="upload-controls">
+            <input type="file" id="pdfFile" accept=".pdf">
+            <button id="uploadBtn" onclick="uploadPDF()">Upload PDF</button>
+        </div>
+        <div id="uploadStatus" class="status-msg"></div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- Question Answering Section -->
+    <div class="ask-section">
+        <h3>Ask a Question</h3>
+        <input
+            id="question"
+            type="text"
+            placeholder="Ask a question about your PDFs or general knowledge..."
+            onkeydown="if(event.key === 'Enter') askQuestion()"
+        >
+
+        <button id="askBtn" onclick="askQuestion()">
+            Ask
+        </button>
+
+        <div id="result"></div>
+    </div>
+
+</div>
+
+<script src="/static/script.js"></script>
+
+</body>
+</html>
